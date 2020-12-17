@@ -6,8 +6,8 @@ app = Flask(__face__)
 
 @app.route('/reg', methods=['POST'])
 def reg():
-    pic = request.form['pic']
-    return 
+    image = request.form['image']
+    return image
 
 if __face__ == '__main__':
     app.run(host = '0.0.0.0', port = 3000)
