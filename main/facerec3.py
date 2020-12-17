@@ -7,7 +7,7 @@ import requests
 import sys
 import json
 import requests
-
+import wallet
 
 url = '127.0.0.1' #for this computer
 #url = '192.168.1.55' #for other computer
@@ -15,7 +15,7 @@ url = '127.0.0.1' #for this computer
 # url = '172.20.10.13' #for raspberrypi
 
 
-def facerec():
+def facerec(store_name):
     # Get a reference to webcam #0 (the default one)
     video_capture = cv2.VideoCapture(0)
 
@@ -107,6 +107,7 @@ def facerec():
                 #
                 # use time.sleep to count the time and count until 9 then the door will open
                 face_names.append(name)
+                wallet.pay(face_names, store_name)
     
                         
 
