@@ -9,14 +9,16 @@ import json
 import requests
 
 
-#url = '127.0.0.1' #for this computer
+url = '127.0.0.1' #for this computer
 #url = '192.168.1.55' #for other computer
-url = '172.20.10.13' #for raspberrypi
+
+# url = '172.20.10.13' #for raspberrypi
 
 
 def facerec():
     # Get a reference to webcam #0 (the default one)
     video_capture = cv2.VideoCapture(0)
+
 
     # Load a sample picture and learn how to recognize it.
     # instead of put the hard codes put something dynamic to connect it with the tkinter
@@ -83,26 +85,26 @@ def facerec():
                 #    res = requests.post("http://" + url + ":5000/", data=conv)
                 #    print(res.text)
                     count_open += 1
-                if count_open==5:
-                    try:
-                        x = requests.get('http://'+url+':5000/', timeout=1)
-                        print(x)
-                        break
-                    except requests.exceptions.ReadTimeout:
-                        pass
-                    count_open=0
-                # use time.sleep to count the time and count until 9 then the door will open
-                if name == "Unknown":
-                    time.sleep(0.05)
-                    count_close += 1
-                if count_close ==5:
-                    (requests.get('http://'+url+':5000/').text)
-                    #conv = '0'
-                    #res = requests.post("http://" + url + ":5000/", data=conv)
-                    #print(res.text)
-                    print ("Error! 404!")
-                    count_close=0
-                
+                # if count_open==5:
+                #     try:
+                #         x = requests.get('http://'+url+':5000/', timeout=1)
+                #         print(x)
+                #         break
+                #     except requests.exceptions.ReadTimeout:
+                #         pass
+                #     count_open=0
+                # # use time.sleep to count the time and count until 9 then the door will open
+                # if name == "Unknown":
+                #     time.sleep(0.05)
+                #     count_close += 1
+                # if count_close ==5:
+                #     (requests.get('http://'+url+':5000/').text)
+                #     #conv = '0'
+                #     #res = requests.post("http://" + url + ":5000/", data=conv)
+                #     #print(res.text)
+                #     print ("Error! 404!")
+                #     count_close=0
+                #
                 # use time.sleep to count the time and count until 9 then the door will open
                 face_names.append(name)
     
@@ -126,7 +128,7 @@ def facerec():
             font = cv2.FONT_HERSHEY_DUPLEX
             cv2.putText(frame, name, (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 1)
         # text show to exit
-        cv2.putText(frame,'Press "E" to exit ',(200,50), cv2.FONT_HERSHEY_DUPLEX, 2,(255,255,255),2,cv2.LINE_AA)
+        cv2.putText(frame,'Face Wallet',(200,50), cv2.FONT_HERSHEY_DUPLEX, 2,(255,255,255),2,cv2.LINE_AA)
 
         # Display the resulting image
         cv2.imshow('Video', frame)
