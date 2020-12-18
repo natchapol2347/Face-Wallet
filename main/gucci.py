@@ -8,7 +8,7 @@ import requests
 
 
 
-store_name = "H&M"
+store_name = "Gucci"
 
 class SampleApp(tk.Tk):
     def __init__(self, *args, **kwargs):
