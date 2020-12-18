@@ -1,4 +1,4 @@
-__author__ = 'kai'
+
 #registerpage2.html
 from flask import Flask, render_template, request
 
