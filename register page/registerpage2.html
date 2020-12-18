@@ -44,46 +44,46 @@
         <form>
             <div class="form-group">
                 <label for="Name">Name:</label>
-                Name: <input type="text" class="form-control" id="Name" placeholder="Enter your name" name="name">
+                Name: <input type="text" class="form-control" id="Name" placeholder="Enter your name" name="name" required>
             </div>
             <div class="form-group">
                 <label for="id-citizen">ID citizen number:</label>
-                ID: <input type="tel" class="form-control" id="id-citizen" placeholder="ID number" name="id-citizen">
+                ID: <input type="tel" class="form-control" id="id-citizen" placeholder="ID number" name="id-citizen" required minlength=13>
 
             </div>
             <div class="form-group">
                 <label for="phone">Phone number:</label>
-                Phone: <input type="tel" class="form-control" id="phone" placeholder="Phone number" name="phone">
+                Phone: <input type="tel" class="form-control" id="phone" placeholder="Phone number" name="phone"required minlength=10>
 
             </div>
             <div class="form-group">
                 <label for="img">Upload neutral face:</label>
-                img1: <input type="file" id="img" name="img" accept="image/*">
+                img1: <input type="file" id="img" name="img" accept="image/*" required>
             </div>
             <div class="form-group">
                 <label for="img">Upload smiling face:</label>
-                img2: <input type="file" id="img" name="img" accept="image/*">
+                img2: <input type="file" id="img" name="img" accept="image/*" required>
             </div>
             <br>
             <div class="form-group">
                 <label for="img">Upload face with pose 1:</label>
                 <br>
                 <img src="./verfication_pose/pose1.jpg" alt="post1">
-                img3: <input type="file" id="img" name="img" accept="image/*">
+                img3: <input type="file" id="img" name="img" accept="image/*" required>
             </div>
             <br>
             <div class="form-group">
                 <label for="img">Upload face with pose 2:</label>
                 <br>
                 <img src="./verfication_pose/pose2.jpeg" alt="post2">
-                img4: <input type="file" id="img" name="img" accept="image/*">
+                img4: <input type="file" id="img" name="img" accept="image/*" required>
             </div>
             <br>
             <div class="form-group">
                 <label for="img">Upload face with pose 3:</label>
                 <br>
                 <img src="./verfication_pose/pose3.jpeg" alt="post3">
-                img5: <input type="file" id="img" name="img" accept="image/*">
+                img5: <input type="file" id="img" name="img" accept="image/*" required>
             </div>
             
             <button type="submit" class="btn btn-primary">Register</button>
